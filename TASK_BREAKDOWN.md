@@ -184,20 +184,23 @@
 ```
 **Status:** ✅ Completed (2026-02-28)
 
-### Task 6.2: Deploy ke Coolify + domain setup
+### Task 6.2: Deploy ke Hostinger (Node.js Web App) + domain setup
 **Agent:** CCT
 ```
-## Task: Deploy static site ke Coolify, setup domain tracking.benkdash.my.id
-## Input: Build folder lengkap, Coolify MCP access
+## Task: Deploy static site ke Hostinger via Node.js Web App (GitHub connect)
+## Input: Build folder lengkap, GitHub repo, Hostinger hPanel access
 ## Done When:
-- [x] Dockerfile / Nixpacks config untuk static site (nginx)
-- [ ] App deployed di Coolify, container running
-- [ ] Domain tracking.benkdash.my.id pointing ke Coolify (DNS A record / CNAME)
-- [ ] SSL certificate aktif (Let's Encrypt via Coolify)
+- [x] GitHub repo created: https://github.com/queery-id/task-tracker-pwa
+- [x] package.json + server.js created (for Hostinger framework detection)
+- [ ] Hostinger: Add website → Node.js Web App → Deploy from GitHub
+- [ ] Connect repo: queery-id/task-tracker-pwa, branch: master
+- [ ] Setup domain: tracking.benkdash.my.id (subdomain dari benkdash.my.id)
+- [ ] Deploy dari Hostinger hPanel
+- [ ] SSL certificate aktif (Let's Encrypt via Hostinger)
 - [ ] App accessible via https://tracking.benkdash.my.id
 - [ ] PWA installable dari domain production
 ```
-**Status:** ⚠️ Partial - GitHub repo created (https://github.com/queery-id/task-tracker-pwa), Dockerfile ready. Deployment via Coolify UI needed (MCP server issue).
+**Status:** ⚠️ Partial - GitHub repo + package.json + server.js ready. Need: Deploy via Hostinger hPanel (Node.js Web App → GitHub connect).
 
 ---
 

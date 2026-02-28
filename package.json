@@ -1,0 +1,16 @@
+{
+  "name": "task-tracker-pwa",
+  "version": "1.0.0",
+  "description": "PWA Task Tracker with Wake-Up Call System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["pwa", "task-tracker", "productivity"],
+  "author": "Bambang",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

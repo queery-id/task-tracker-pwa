@@ -146,22 +146,25 @@ Sesi 7: Task 6.1 + 6.2 (PWA polish + deploy)
 ```
 
 ## Current Status
-**Phase 3 (Build) COMPLETE** — All 10 tasks done (Epic 1-5 complete, Epic 6 partial).
+**Phase 3 (Build) COMPLETE** — All 10 tasks done.
 
 **GitHub:** https://github.com/queery-id/task-tracker-pwa
 
-**Deployment:** Ready via Coolify UI (MCP server issue)
-- Dockerfile + Nixpacks config ready
-- Static nginx config ready
-- Domain: tracking.benkdash.my.id (DNS A record needed)
-- SSL: Let's Encrypt via Coolify (auto)
+**Deployment:** Hostinger Business Web Hosting (Node.js Web App)
+- Method: Deploy from GitHub (Hostinger Node.js Web App)
+- Repo: https://github.com/queery-id/task-tracker-pwa
+- Domain: tracking.benkdash.my.id
+- SSL: Let's Encrypt via Hostinger (auto)
 
-**Manual Deploy Steps (Coolify UI):**
-1. New Project → "Task Tracker"
-2. New Application → GitHub → queery-id/task-tracker-pwa
-3. Build Pack: Dockerfile
-4. Domain: tracking.benkdash.my.id
-5. Deploy → Verify HTTPS → Test PWA install
+**Setup Sekali Saja (Hostinger hPanel):**
+1. Websites → Add website → Node.js Web App
+2. Deploy from GitHub → Connect repo: `queery-id/task-tracker-pwa`
+3. Branch: `master`
+4. Node.js version: 18+ (di hPanel)
+5. Setup domain: `tracking.benkdash.my.id`
+6. Deploy → Auto-deploy setiap push ke master
+
+**Note:** `package.json` + `server.js` dibuat untuk memenuhi requirement Hostinger Node.js Web App detection. App tetap static PWA.
 
 ---
 *Created: 2026-02-28 | Last Updated: 2026-02-28 | Phase 3 Complete*
