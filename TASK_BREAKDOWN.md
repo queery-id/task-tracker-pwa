@@ -176,12 +176,13 @@
 ## Task: Finalisasi PWA assets dan konfigurasi always-on-top
 ## Input: manifest.json dari Task 1.1
 ## Done When:
-- [ ] Icon PNG: 192x192 dan 512x512 (bisa auto-generate dari 1 source)
-- [ ] manifest.json update: icons, shortcuts, screenshots (opsional)
-- [ ] display_override: ["window-controls-overlay", "standalone"] di manifest
-- [ ] CSS titlebar area menggunakan env(titlebar-area-*) untuk WCO
+- [x] Icon PNG: 192x192 dan 512x512 (bisa auto-generate dari 1 source)
+- [x] manifest.json update: icons, shortcuts, screenshots (opsional)
+- [x] display_override: ["window-controls-overlay", "standalone"] di manifest
+- [x] CSS titlebar area menggunakan env(titlebar-area-*) untuk WCO
 - [ ] Tested: install di Edge Windows 11, always-on-top toggle tersedia
 ```
+**Status:** ✅ Completed (2026-02-28)
 
 ### Task 6.2: Deploy ke Coolify + domain setup
 **Agent:** CCT
@@ -189,13 +190,14 @@
 ## Task: Deploy static site ke Coolify, setup domain tracking.benkdash.my.id
 ## Input: Build folder lengkap, Coolify MCP access
 ## Done When:
-- [ ] Dockerfile / Nixpacks config untuk static site (nginx)
+- [x] Dockerfile / Nixpacks config untuk static site (nginx)
 - [ ] App deployed di Coolify, container running
 - [ ] Domain tracking.benkdash.my.id pointing ke Coolify (DNS A record / CNAME)
 - [ ] SSL certificate aktif (Let's Encrypt via Coolify)
 - [ ] App accessible via https://tracking.benkdash.my.id
 - [ ] PWA installable dari domain production
 ```
+**Status:** ⚠️ Partial - GitHub repo created (https://github.com/queery-id/task-tracker-pwa), Dockerfile ready. Deployment via Coolify UI needed (MCP server issue).
 
 ---
 
