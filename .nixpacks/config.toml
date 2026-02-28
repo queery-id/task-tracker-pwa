@@ -1,0 +1,61 @@
+[phases.build]
+cmds = [
+  "mkdir -p public",
+  "cp -r index.html dashboard.html detail.html public/",
+  "cp -r css js assets manifest.json service-worker.js public/"
+]
+
+[phases.start]
+cmds = ["nginx -g 'daemon off;'"]
+
+[static]
+# Nixpacks will use nginx for static site serving
+# Main config is generated automatically
+
+[[static.files]]
+location = "/public/"
+from = "*"
+[static.files.nginx]
+# Custom nginx config for PWA service worker and manifest
+main = '''
+events {
+  worker_connections 1024;
+}
+
+http {
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+
+  server {
+    listen 8080;
+    root /public;
+    index index.html;
+
+    # Gzip compression
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1000;
+
+    # PWA Service Worker
+    location /service-worker.js {
+      add_header Service-Worker-Allowed /;
+    }
+
+    # PWA Manifest
+    location /manifest.json {
+      add_header Content-Type application/json;
+    }
+
+    # SPA fallback (optional, for future use)
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets
+    location ~* \.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2)$ {
+      expires 1y;
+      add_header Cache-Control "public, immutable";
+    }
+  }
+}
+'''

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1419">
+  <meta name="description" content="Personal task tracker dengan wake-up call setiap 30 menit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TaskTracker">
+  <title>Task Tracker - Login</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-login">
+  <div class="login-container">
+    <!-- Logo / App Name -->
+    <div class="login-header">
+      <h1 class="app-logo">TaskTracker</h1>
+      <p class="login-subtitle">Masuk untuk lanjutkan</p>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="login-form">
+      <div id="setupMode" class="setup-mode" style="display: none;">
+        <p class="setup-text">Buat PIN baru (6 digit)</p>
+      </div>
+
+      <div class="pin-input-group">
+        <input
+          type="password"
+          id="pinInput"
+          class="input input-pin"
+          maxlength="6"
+          pattern="[0-9]{6}"
+          inputmode="numeric"
+          placeholder="••••••"
+          autocomplete="off"
+          required
+        >
+        <div id="pinError" class="error-message" style="display: none;"></div>
+      </div>
+
+      <div class="login-options">
+        <label class="checkbox-label">
+          <input type="checkbox" id="stayLoggedIn" checked>
+          <span>Tetap login</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/app.js"></script>
+  <script type="module" src="/js/auth.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((reg) => console.log('Service Worker registered:', reg.scope))
+        .catch((err) => console.error('Service Worker registration failed:', err));
+    }
+  </script>
+</body>
+</html>

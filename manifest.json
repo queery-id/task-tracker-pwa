@@ -1,0 +1,41 @@
+{
+  "name": "Task Tracker PWA",
+  "short_name": "TaskTracker",
+  "description": "Personal task tracker with wake-up call every 30 minutes",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Buka Dashboard",
+      "short_name": "Dashboard",
+      "description": "Lihat task aktif",
+      "url": "/dashboard.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": []
+}
