@@ -146,8 +146,22 @@ Sesi 7: Task 6.1 + 6.2 (PWA polish + deploy)
 ```
 
 ## Current Status
-**Phase 3 (Build) in progress** — Sesi 5 complete (Task 5.1 + 5.2: Wake-Up Call System).
-Next: Sesi 6 → Task 6.1 + 6.2 (PWA Polish + Deploy)
+**Phase 3 (Build) COMPLETE** — All 10 tasks done (Epic 1-5 complete, Epic 6 partial).
+
+**GitHub:** https://github.com/queery-id/task-tracker-pwa
+
+**Deployment:** Ready via Coolify UI (MCP server issue)
+- Dockerfile + Nixpacks config ready
+- Static nginx config ready
+- Domain: tracking.benkdash.my.id (DNS A record needed)
+- SSL: Let's Encrypt via Coolify (auto)
+
+**Manual Deploy Steps (Coolify UI):**
+1. New Project → "Task Tracker"
+2. New Application → GitHub → queery-id/task-tracker-pwa
+3. Build Pack: Dockerfile
+4. Domain: tracking.benkdash.my.id
+5. Deploy → Verify HTTPS → Test PWA install
 
 ---
-*Created: 2026-02-28 | Last Updated: 2026-02-28*
+*Created: 2026-02-28 | Last Updated: 2026-02-28 | Phase 3 Complete*
